@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第38回田戸岬工場フェスティバル｜株式会社JTEKT</title>
+<meta name="description" content="株式会社JTEKT 設立40周年記念 第38回田戸岬工場フェスティバル。2026年11月15日（日）10:00〜、愛知県高浜市の田戸岬工場で開催。入場無料、どなたでもお楽しみいただけます。">
+<meta name="theme-color" content="#FF6A3D">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="第38回田戸岬工場フェスティバル｜株式会社JTEKT">
+<meta property="og:description" content="2026.11.15（日）10:00〜 入場無料。ステージ・グルメ・大抽選会・工場見学。地域のみなさまへ、感謝を込めた楽しい一日。">
+<meta property="og:image" content="assets/img/g-candy.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================
+   PALETTE / RESET
+=========================== */
+:root{
+    --bg:#FFF6EC;
+    --surface:#ffffff;
+    --ink:#1f2d3a;
+    --muted:#596876;
+    --orange:#FF6A3D;
+    --teal:#00A8A2;
+    --yellow:#FFC23D;
+    --pink:#FF7AA2;
+    --grape:#8A6CF0;
+    --blue:#2E96F5;
+    --jt-red:#E30701;
+    --jt-ink:#130B0A;
+    --sky1:#BEE9FF;
+    --sky2:#F0FBFF;
+    --grass:#BFE6A8;
+    --radius:24px;
+    --shadow:0 12px 32px rgba(31,45,58,.12);
+    --shadow-sm:0 6px 16px rgba(31,45,58,.10);
+    --head:'M PLUS Rounded 1c','Noto Sans JP',sans-serif;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:88px; }
+body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    overflow-x:hidden;
+    line-height:1.85;
+    font-size:17px;
+    -webkit-text-size-adjust:100%;
+}
+img{ max-width:100%; display:block; }
+:focus-visible{ outline:3px solid var(--orange); outline-offset:3px; border-radius:6px; }
+
+.skip{
+    position:absolute; left:-9999px; top:0; z-index:2000;
+    background:var(--orange); color:#fff; padding:12px 20px;
+    border-radius:0 0 12px 0; font-weight:700;
+}
+.skip:focus{ left:0; }
+
+/* ===========================
+   HEADER
+=========================== */
+header{
+    position:fixed;
+    width:100%;
+    top:0; left:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    padding:14px clamp(16px,5%,60px);
+    background:rgba(255,255,255,.62);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    transition:background .35s, box-shadow .35s;
+}
+.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+.brand img{ height:26px; width:auto; }
+.brand .brand-sub{
+    font-family:var(--head);
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:.06em;
+    color:var(--muted);
+    border-left:2px solid #dfd6c9;
+    padding-left:12px;
+    white-space:nowrap;
+}
+nav{ display:flex; gap:6px; flex-wrap:wrap; }
+nav a{
+    font-family:var(--head);
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:.05em;
+    padding:10px 14px;
+    border-radius:999px;
+    transition:.25s;
+}
+nav a:hover{ background:var(--orange); color:#fff; }
+
+/* ===========================
+   HERO
+=========================== */
+.hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 55%,var(--bg) 100%);
+    overflow:hidden;
+    padding:104px 20px 0;
+}
+/* ふわふわ雲 */
+.cloud{
+    position:absolute;
+    background:#fff;
+    border-radius:100px;
+    opacity:.85;
+    filter:blur(.3px);
+    animation:drift linear infinite;
+}
+.cloud::before,.cloud::after{
+    content:""; position:absolute; background:#fff; border-radius:50%;
+}
+.cloud::before{ width:60%; height:160%; left:12%; top:-70%; }
+.cloud::after{ width:45%; height:130%; right:14%; top:-45%; }
+@keyframes drift{ from{ transform:translateX(-30vw); } to{ transform:translateX(130vw); } }
+
+/* 三角旗 */
+.bunting{
+    position:absolute;
+    top:76px; left:-4%;
+    width:108%;
+    display:flex;
+    justify-content:space-between;
+    z-index:3;
+    pointer-events:none;
+}
+.bunting::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:#e2b48a;
+    border-radius:3px;
+}
+.flag{
+    width:26px; height:34px;
+    background:var(--c);
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center;
+    animation:sway 2.6s ease-in-out infinite;
+    filter:drop-shadow(0 3px 4px rgba(0,0,0,.10));
+}
+@keyframes sway{ 0%,100%{ transform:rotate(-5deg); } 50%{ transform:rotate(5deg); } }
+
+/* 紙吹雪 */
+.confetti{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:2; }
+.confetti i{
+    position:absolute;
+    top:-24px;
+    width:10px; height:14px;
+    background:var(--c);
+    border-radius:2px;
+    opacity:.9;
+    animation:fall linear infinite;
+}
+@keyframes fall{
+    0%{ transform:translateY(-10vh) rotate(0deg); }
+    100%{ transform:translateY(112vh) rotate(720deg); }
+}
+
+.hero-content{ position:relative; z-index:5; max-width:900px; }
+.anniversary{
+    display:inline-block;
+    font-family:var(--head);
+    font-weight:900;
+    font-size:15px;
+    letter-spacing:.14em;
+    color:#fff;
+    background:var(--jt-red);
+    padding:8px 22px;
+    border-radius:999px;
+    box-shadow:var(--shadow-sm);
+    margin-bottom:16px;
+}
+.hero h1{
+    font-family:var(--head);
+    font-weight:900;
+    font-size:clamp(32px,6.2vw,62px);
+    line-height:1.24;
+    letter-spacing:.01em;
+    color:var(--ink);
+    text-shadow:0 3px 0 #fff, 0 8px 22px rgba(31,45,58,.14);
+    margin-bottom:16px;
+}
+.hero h1 .pop{ color:var(--orange); }
+.date{
+    display:inline-block;
+    font-family:var(--head);
+    font-weight:900;
+    font-size:clamp(19px,3.6vw,30px);
+    color:#fff;
+    background:var(--ink);
+    padding:8px 26px;
+    border-radius:999px;
+    box-shadow:var(--shadow-sm);
+    margin-bottom:14px;
+}
+.catch{ font-size:clamp(15px,2.2vw,18px); font-weight:500; color:#3d4d5c; margin-bottom:18px; }
+.hero-badges{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-bottom:20px; }
+.hero-badges span{
+    font-family:var(--head); font-weight:800; font-size:14px;
+    background:#fff; color:var(--ink);
+    padding:7px 16px; border-radius:999px;
+    box-shadow:var(--shadow-sm);
+}
+.btn{
+    display:inline-block;
+    font-family:var(--head);
+    font-weight:900;
+    font-size:17px;
+    text-decoration:none;
+    color:#fff;
+    background:var(--orange);
+    padding:16px 42px;
+    border-radius:999px;
+    box-shadow:0 8px 0 #d9481f, var(--shadow);
+    transition:transform .18s, box-shadow .18s;
+}
+.btn:hover,.btn:focus-visible{ transform:translateY(-4px); box-shadow:0 12px 0 #d9481f, var(--shadow); }
+.btn:active{ transform:translateY(3px); box-shadow:0 4px 0 #d9481f; }
+
+/* ヒーローのマスコット */
+.hero-cast{
+    position:relative; z-index:5;
+    display:flex; align-items:flex-end; justify-content:center;
+    gap:clamp(30px,8vw,90px);
+    margin-top:76px;
+    width:100%;
+    max-width:760px;
+}
+.hero-cast figure{ position:relative; text-align:center; }
+.hero-cast img{
+    height:clamp(120px,17vw,178px);
+    width:auto;
+    filter:drop-shadow(0 14px 18px rgba(31,45,58,.18));
+}
+.hero-cast .j img{ animation:hop 2.4s ease-in-out infinite; }
+.hero-cast .t img{ animation:hop 2.4s ease-in-out infinite .5s; }
+@keyframes hop{ 0%,100%{ transform:translateY(0) rotate(-1deg); } 50%{ transform:translateY(-12px) rotate(1deg); } }
+.hero-cast figcaption{
+    font-family:var(--head); font-weight:800; font-size:13px;
+    color:var(--muted); margin-top:2px;
+}
+.hero-cast .say{
+    position:absolute;
+    bottom:100%; left:50%; transform:translateX(-50%);
+    margin-bottom:10px;
+    white-space:nowrap;
+    font-family:var(--head); font-weight:800; font-size:clamp(12px,2.4vw,16px);
+    background:#fff; color:var(--ink);
+    padding:8px 16px; border-radius:999px;
+    box-shadow:var(--shadow-sm);
+}
+.hero-cast .say::after{
+    content:""; position:absolute; top:100%; left:50%;
+    transform:translateX(-50%);
+    border:8px solid transparent; border-top-color:#fff;
+}
+.scroll{
+    position:relative; z-index:5;
+    font-family:var(--head); font-weight:800;
+    font-size:12px; letter-spacing:.22em; color:var(--muted);
+    padding:10px 0 14px;
+}
+.scroll::after{
+    content:""; display:block; width:2px; height:26px;
+    background:var(--muted); margin:6px auto 0;
+    animation:scrolldot 1.8s ease-in-out infinite;
+}
+@keyframes scrolldot{ 0%{ transform:scaleY(0); transform-origin:top; } 50%{ transform:scaleY(1); transform-origin:top; } 51%{ transform:scaleY(1); transform-origin:bottom; } 100%{ transform:scaleY(0); transform-origin:bottom; } }
+
+/* ===========================
+   SECTION 共通
+=========================== */
+section{ padding:96px 20px; position:relative; }
+#event{ background:var(--surface); }
+#access{ background:var(--surface); }
+.container{ max-width:1080px; margin:0 auto; }
+h2{
+    font-family:var(--head);
+    font-weight:900;
+    font-size:clamp(28px,5vw,44px);
+    text-align:center;
+    letter-spacing:.04em;
+    margin-bottom:12px;
+}
+h2 .en{
+    display:block;
+    font-size:13px; letter-spacing:.3em;
+    color:var(--orange); margin-bottom:6px;
+}
+.lead{ text-align:center; color:var(--muted); margin-bottom:48px; }
+
+/* 案内役ふきだし */
+.guide{
+    display:flex; align-items:flex-end; gap:14px;
+    max-width:720px; margin:0 auto 44px;
+}
+.guide img{ width:clamp(72px,14vw,104px); height:auto; flex-shrink:0; }
+.guide .bubble{
+    position:relative;
+    background:#fff;
+    border:3px solid var(--c,var(--orange));
+    border-radius:20px;
+    padding:16px 22px;
+    font-family:var(--head);
+    font-weight:700;
+    font-size:clamp(14px,2.6vw,17px);
+    line-height:1.7;
+    box-shadow:var(--shadow-sm);
+}
+.guide .bubble::before,.guide .bubble::after{
+    content:""; position:absolute; bottom:22px; width:0; height:0;
+    border:12px solid transparent;
+}
+.guide .bubble::before{ left:-24px; border-right-color:var(--c,var(--orange)); }
+.guide .bubble::after{ left:-19px; border-right-color:#fff; }
+.guide.right{ flex-direction:row-reverse; }
+.guide.right .bubble::before{ left:auto; right:-24px; border-right-color:transparent; border-left-color:var(--c,var(--orange)); }
+.guide.right .bubble::after{ left:auto; right:-19px; border-right-color:transparent; border-left-color:#fff; }
+
+/* ===========================
+   ABOUT
+=========================== */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:44px;
+    align-items:center;
+}
+.about-photo{
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transform:rotate(-1.6deg);
+    border:8px solid #fff;
+}
+.about-photo img{ width:100%; height:340px; object-fit:cover; }
+.about-body h3{
+    font-family:var(--head); font-weight:900;
+    font-size:clamp(22px,3.6vw,30px);
+    margin-bottom:14px;
+}
+.about-body p{ color:var(--muted); margin-bottom:18px; }
+.number{
+    font-family:var(--head); font-weight:900;
+    font-size:clamp(64px,12vw,120px);
+    line-height:1;
+    background:linear-gradient(135deg,var(--orange),var(--jt-red));
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:6px;
+}
+.number small{ font-size:.3em; color:var(--ink); -webkit-text-fill-color:var(--ink); margin-left:8px; }
+.facts{ list-style:none; display:grid; gap:10px; }
+.facts li{
+    display:flex; gap:12px; align-items:baseline;
+    background:var(--bg); border-radius:14px; padding:12px 18px;
+    font-size:15px;
+}
+.facts b{ font-family:var(--head); color:var(--orange); flex-shrink:0; width:5.5em; }
+
+/* ===========================
+   EVENT カード
+=========================== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+.card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border-bottom:7px solid var(--c);
+    transition:transform .28s, box-shadow .28s;
+}
+.card:hover{ transform:translateY(-8px); box-shadow:0 20px 44px rgba(31,45,58,.18); }
+.card-photo{ position:relative; aspect-ratio:16/10; overflow:hidden; background:#eee; }
+.card-photo img{ width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.card:hover .card-photo img{ transform:scale(1.06); }
+.card-tag{
+    position:absolute; top:14px; left:14px;
+    font-family:var(--head); font-weight:900; font-size:13px;
+    background:var(--c); color:#fff;
+    padding:6px 14px; border-radius:999px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+.card-body{ padding:22px 24px 26px; }
+.card h3{
+    font-family:var(--head); font-weight:900;
+    font-size:21px; margin-bottom:8px;
+    display:flex; align-items:center; gap:8px;
+}
+.card p{ font-size:15px; color:var(--muted); }
+.card .when{
+    display:inline-block; margin-top:12px;
+    font-family:var(--head); font-weight:800; font-size:13px;
+    color:var(--c); background:color-mix(in srgb,var(--c) 12%,#fff);
+    padding:4px 12px; border-radius:999px;
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+#gallery{ background:var(--bg); }
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+.gallery figure{
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    background:#fff;
+}
+.gallery img{
+    width:100%; height:200px; object-fit:cover;
+    transition:transform .5s;
+}
+.gallery figure:hover img{ transform:scale(1.07); }
+.gallery figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    font-family:var(--head); font-weight:800; font-size:14px;
+    color:#fff;
+    padding:26px 14px 10px;
+    background:linear-gradient(transparent,rgba(0,0,0,.62));
+}
+.gallery-note{ text-align:center; font-size:13px; color:var(--muted); margin-top:22px; }
+
+/* ===========================
+   COUNTDOWN
+=========================== */
+#countdown{
+    background:linear-gradient(135deg,var(--orange),var(--pink));
+    color:#fff;
+    text-align:center;
+}
+#countdown h2{ color:#fff; }
+#countdown h2 .en{ color:rgba(255,255,255,.8); }
+.count-wrap{ display:flex; align-items:center; justify-content:center; gap:clamp(10px,4vw,44px); flex-wrap:wrap; }
+.count-wrap > img{ width:clamp(90px,18vw,160px); height:auto; filter:drop-shadow(0 10px 16px rgba(0,0,0,.2)); }
+#timer{
+    display:flex; justify-content:center; align-items:flex-end;
+    gap:clamp(8px,2.5vw,20px);
+    font-family:var(--head); font-weight:800; font-size:16px;
+}
+#timer .unit{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+#timer .num{
+    display:flex; align-items:center; justify-content:center;
+    min-width:clamp(66px,15vw,104px);
+    padding:14px 8px;
+    font-size:clamp(30px,7vw,52px);
+    font-weight:900;
+    color:var(--ink);
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 8px 0 rgba(0,0,0,.14);
+    font-variant-numeric:tabular-nums;
+}
+#timer .cap{ font-size:14px; letter-spacing:.1em; }
+
+/* ===========================
+   会場マップ
+=========================== */
+#venue{ background:var(--bg); }
+.map{
+    position:relative;
+    aspect-ratio:16/9;
+    min-height:320px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 18% 30%, #d6f0c4 0 12%, transparent 12.5%),
+        radial-gradient(circle at 78% 68%, #d6f0c4 0 10%, transparent 10.5%),
+        linear-gradient(180deg,#eaf7e2,#dff0d2);
+    box-shadow:var(--shadow);
+    border:8px solid #fff;
+}
+.map-hint{ text-align:center; font-size:14px; color:var(--muted); margin-bottom:20px; }
+
+/* 敷地図のパーツ */
+.mz{ position:absolute; z-index:1; }
+.mz-path{
+    left:5%; right:5%; top:46%; height:11%;
+    background:#f3e6d2;
+    border-radius:999px;
+    box-shadow:inset 0 0 0 3px #e7d5bb;
+}
+.mz-path::after{
+    content:"";
+    position:absolute; left:5%; right:5%; top:50%;
+    height:3px; transform:translateY(-50%);
+    background:repeating-linear-gradient(90deg,#e0cfae 0 14px,transparent 14px 30px);
+}
+.mz-bldg,.mz-park{
+    display:flex; align-items:flex-end; justify-content:center;
+    padding-bottom:9px;
+    font-family:var(--head); font-weight:800; font-size:12px; color:#7c8b98;
+    border-radius:14px;
+}
+.mz-bldg{
+    left:43%; top:62%; width:28%; height:32%;
+    background:repeating-linear-gradient(135deg,#e9eff4 0 11px,#e0e8ef 11px 22px);
+    border:3px solid #cfd9e1;
+}
+.mz-park{
+    left:3%; top:64%; width:16%; height:28%;
+    background:#e8eff6;
+    border:3px dashed #c4d3de;
+    align-items:center; padding-bottom:0;
+}
+.mz-gate{
+    left:1.5%; top:51.5%; transform:translateY(-50%);
+    font-family:var(--head); font-weight:800; font-size:11px;
+    background:var(--ink); color:#fff;
+    padding:5px 12px; border-radius:999px;
+    z-index:2;
+}
+.mtree{
+    position:absolute; z-index:1;
+    left:var(--x); top:var(--y);
+    width:var(--s); height:var(--s);
+    border-radius:50%;
+    background:#a9dd93;
+    box-shadow:0 3px 0 #8ecb77;
+}
+.pin{
+    position:absolute;
+    transform:translate(-50%,-50%);
+    display:flex; flex-direction:column; align-items:center; gap:5px;
+    background:none; border:0; cursor:pointer;
+    padding:6px;
+    z-index:4;
+}
+.pin .dot{
+    width:52px; height:52px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px;
+    background:#fff;
+    border:4px solid var(--c);
+    border-radius:50%;
+    box-shadow:var(--shadow-sm);
+    transition:transform .22s;
+}
+.pin .plabel{
+    font-family:var(--head); font-weight:800; font-size:12px;
+    background:#fff; color:var(--ink);
+    padding:3px 10px; border-radius:999px;
+    box-shadow:var(--shadow-sm);
+    white-space:nowrap;
+    transition:.22s;
+}
+.pin::after{
+    content:"";
+    position:absolute; top:6px; left:50%; transform:translateX(-50%);
+    width:52px; height:52px; border-radius:50%;
+    border:3px solid var(--c);
+    animation:pulse 2.4s ease-out infinite;
+    pointer-events:none;
+}
+@keyframes pulse{ 0%{ transform:translateX(-50%) scale(1); opacity:.6; } 100%{ transform:translateX(-50%) scale(1.9); opacity:0; } }
+.pin:hover .dot,.pin:focus-visible .dot{ transform:translateY(-5px) scale(1.08); }
+.pin.active .dot{ background:var(--c); transform:translateY(-5px) scale(1.12); }
+.pin.active .plabel{ background:var(--c); color:#fff; }
+
+.map-detail{
+    position:absolute;
+    left:14px; right:14px; bottom:14px;
+    z-index:6;
+    display:flex; gap:16px; align-items:flex-start;
+    background:#fff;
+    border-radius:18px;
+    border-left:8px solid var(--c);
+    padding:18px 46px 18px 20px;
+    box-shadow:var(--shadow);
+    transform:translateY(130%);
+    opacity:0;
+    transition:transform .35s cubic-bezier(.2,.9,.3,1.2), opacity .3s;
+    text-align:left;
+}
+.map-detail.show{ transform:translateY(0); opacity:1; }
+.detail-emoji{ font-size:34px; line-height:1.2; flex-shrink:0; }
+.detail-time{
+    display:inline-block;
+    font-family:var(--head); font-weight:800; font-size:12px;
+    color:#fff; background:var(--c);
+    padding:2px 12px; border-radius:999px; margin-bottom:6px;
+}
+.detail-title{ font-family:var(--head); font-size:20px; margin-bottom:4px; }
+.detail-desc{ font-size:14px; color:var(--muted); line-height:1.7; }
+.detail-close{
+    position:absolute; top:12px; right:12px;
+    width:34px; height:34px;
+    border:0; border-radius:50%;
+    background:#f1eae0; color:var(--ink);
+    font-size:18px; cursor:pointer; line-height:1;
+}
+.detail-close:hover{ background:#e4ded4; }
+.map-caption{ text-align:center; font-size:13px; color:var(--muted); margin-top:18px; }
+
+/* ===========================
+   ACCESS
+=========================== */
+.access-grid{ display:grid; grid-template-columns:1.25fr 1fr; gap:36px; align-items:start; }
+.aerial{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:8px solid #fff;
+}
+.aerial img{ width:100%; height:auto; display:block; }
+.aerial .site-pin{
+    position:absolute;
+    left:39.4%; top:65.5%;
+    transform:translate(-50%,-100%);
+    display:flex; flex-direction:column; align-items:center;
+    pointer-events:none;
+}
+.aerial .site-pin .chip{
+    font-family:var(--head); font-weight:900; font-size:14px;
+    color:#fff; background:var(--jt-red);
+    padding:7px 16px; border-radius:999px;
+    box-shadow:0 6px 16px rgba(0,0,0,.4);
+    white-space:nowrap;
+}
+.aerial .site-pin .stem{
+    width:3px; height:16px; background:var(--jt-red);
+    box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+.aerial .site-pin .ring{
+    width:26px; height:26px; border-radius:50%;
+    border:4px solid var(--jt-red);
+    background:rgba(227,7,1,.28);
+    box-shadow:0 2px 8px rgba(0,0,0,.4);
+}
+.aerial .src{
+    position:absolute; right:8px; bottom:8px;
+    font-size:11px; color:#fff; line-height:1.4;
+    background:rgba(20,28,36,.62);
+    padding:3px 10px; border-radius:8px;
+}
+.info-card{
+    background:var(--bg);
+    border-radius:var(--radius);
+    padding:28px 28px 24px;
+    box-shadow:var(--shadow-sm);
+}
+.info-card h3{ font-family:var(--head); font-weight:900; font-size:22px; margin-bottom:16px; }
+.info-list{ list-style:none; display:grid; gap:14px; margin-bottom:22px; }
+.info-list li{ display:grid; grid-template-columns:5.5em 1fr; gap:10px; font-size:15px; align-items:baseline; }
+.info-list dt,.info-list b{ font-family:var(--head); font-weight:800; color:var(--orange); }
+.info-list a{ color:var(--ink); }
+.map-links{ display:flex; flex-wrap:wrap; gap:10px; }
+.map-links a{
+    font-family:var(--head); font-weight:800; font-size:14px;
+    text-decoration:none; color:#fff; background:var(--ink);
+    padding:11px 20px; border-radius:999px;
+    transition:.22s;
+}
+.map-links a:hover{ background:var(--orange); transform:translateY(-2px); }
+.access-note{ font-size:13px; color:var(--muted); margin-top:18px; }
+
+/* ===========================
+   FAQ
+=========================== */
+#faq{ background:var(--bg); }
+.faq-list{ max-width:800px; margin:0 auto; }
+.faq-item{ margin-bottom:14px; }
+.faq-item button{
+    width:100%;
+    display:flex; align-items:center; gap:14px;
+    text-align:left;
+    font-family:var(--head); font-weight:800;
+    font-size:clamp(15px,2.6vw,17px);
+    color:var(--ink);
+    background:var(--surface);
+    border:3px solid #f0e6d8;
+    border-radius:16px;
+    padding:18px 22px;
+    cursor:pointer;
+    transition:.25s;
+}
+.faq-item button:hover{ background:#fff4e9; border-color:var(--orange); }
+.faq-item button .q{
+    flex-shrink:0;
+    width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--orange); color:#fff;
+    border-radius:50%; font-size:15px;
+}
+.faq-item button .mark{ margin-left:auto; color:var(--orange); font-size:20px; transition:transform .25s; }
+.faq-item button[aria-expanded="true"] .mark{ transform:rotate(45deg); }
+.faq-item button[aria-expanded="true"]{ border-color:var(--orange); background:#fff4e9; }
+.answer{
+    display:none;
+    padding:18px 22px 20px 66px;
+    font-size:15px; color:var(--muted);
+    background:var(--surface);
+    border-radius:0 0 16px 16px;
+    margin:-6px 8px 0;
+    box-shadow:var(--shadow-sm);
+}
+.answer.open{ display:block; }
+
+/* ===========================
+   FOOTER
+=========================== */
+footer{
+    background:var(--ink);
+    color:#c9d4de;
+    padding:64px 20px 40px;
+    text-align:center;
+    font-size:14px;
+}
+.foot-logo{
+    display:inline-block;
+    background:#fff;
+    padding:14px 26px;
+    border-radius:16px;
+    margin-bottom:20px;
+}
+.foot-logo img{ height:28px; width:auto; }
+.foot-cast{ display:flex; justify-content:center; align-items:flex-end; gap:16px; margin:8px 0 26px; }
+.foot-cast img{ height:96px; width:auto; }
+footer h4{ font-family:var(--head); font-weight:800; font-size:15px; color:#fff; margin-bottom:10px; }
+.credits{
+    max-width:840px; margin:30px auto 0;
+    text-align:left;
+    background:rgba(255,255,255,.06);
+    border-radius:16px;
+    padding:18px 22px;
+}
+.credits summary{
+    cursor:pointer; font-family:var(--head); font-weight:800;
+    color:#fff; font-size:14px; list-style:none;
+}
+.credits summary::marker{ content:""; }
+.credits summary::before{ content:"▸ "; color:var(--yellow); }
+.credits[open] summary::before{ content:"▾ "; }
+.credits ul{ list-style:none; margin-top:14px; display:grid; gap:8px; font-size:12px; line-height:1.7; }
+.credits a{ color:#ffd48a; }
+.copyright{ margin-top:26px; font-size:13px; color:#8fa0b0; }
+
+/* ===========================
+   スクロール演出
+=========================== */
+.fade{ opacity:0; transform:translateY(44px); transition:opacity .8s, transform .8s; }
+.fade.show{ opacity:1; transform:translateY(0); }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width:900px){
+    header{ flex-direction:column; gap:6px; padding:10px 16px; }
+    .brand .brand-sub{ display:none; }
+    nav{
+        gap:2px;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        max-width:100%;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+        mask-image:linear-gradient(90deg,transparent 0,#000 12px,#000 calc(100% - 12px),transparent 100%);
+    }
+    nav::-webkit-scrollbar{ display:none; }
+    nav a{ padding:7px 10px; font-size:13px; white-space:nowrap; }
+    html{ scroll-padding-top:104px; }
+    .about-grid,.access-grid{ grid-template-columns:1fr; }
+    .about-photo{ transform:none; }
+    .about-photo img{ height:260px; }
+    .gallery{ grid-template-columns:repeat(2,1fr); }
+    .bunting{ top:110px; }
+    .hero{ padding-top:150px; }
+}
+@media(max-width:600px){
+    body{ font-size:16px; }
+    section{ padding:70px 16px; }
+    nav a{ padding:8px 10px; font-size:13px; }
+    .guide{ flex-direction:column; align-items:center; text-align:center; }
+    .guide.right{ flex-direction:column; }
+    .guide .bubble::before,.guide .bubble::after{
+        bottom:auto; top:-24px; left:50%; transform:translateX(-50%);
+        border-right-color:transparent; border-left-color:transparent;
+    }
+    .guide .bubble::before{ border-bottom-color:var(--c,var(--orange)); }
+    .guide .bubble::after{ top:-19px; border-bottom-color:#fff; }
+    .guide.right .bubble::before{ right:auto; border-left-color:transparent; border-bottom-color:var(--c,var(--orange)); }
+    .guide.right .bubble::after{ right:auto; border-left-color:transparent; border-bottom-color:#fff; }
+    .gallery{ gap:12px; }
+    .gallery img{ height:150px; }
+    .map{ aspect-ratio:4/5; }
+    .pin .dot{ width:44px; height:44px; font-size:20px; }
+    .pin::after{ width:44px; height:44px; }
+    .map-detail{ padding:16px 42px 16px 16px; }
+    .answer{ padding-left:22px; }
+    .info-list li{ grid-template-columns:1fr; gap:0; }
+}
+@media(prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation:none !important; transition:none !important; }
+    .fade{ opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#about">本文へスキップ</a>
+
+<header>
+    <a class="brand" href="#top">
+        <img src="assets/img/jtekt-logo.svg" alt="株式会社JTEKT" width="117" height="33">
+        <span class="brand-sub">田戸岬工場フェスティバル</span>
+    </a>
+    <nav aria-label="ページ内メニュー">
+        <a href="#about">開催概要</a>
+        <a href="#event">もよおし</a>
+        <a href="#gallery">フォト</a>
+        <a href="#venue">会場マップ</a>
+        <a href="#access">アクセス</a>
+        <a href="#faq">よくある質問</a>
+    </nav>
+</header>
+
+<section class="hero" id="top">
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+    <div class="bunting" id="bunting" aria-hidden="true"></div>
+
+    <div class="hero-content">
+        <p class="anniversary">JTEKT 設立40周年記念</p>
+        <h1>第38回<br><span class="pop">田戸岬工場</span>フェスティバル</h1>
+        <p class="date">2026.11.15（日）10:00〜16:00</p>
+        <p class="catch">地域のみなさまへ。感謝を込めた、楽しい一日。</p>
+        <div class="hero-badges">
+            <span>🎟 入場無料</span>
+            <span>👶 お子さま歓迎</span>
+            <span>🅿️ 駐車場あり</span>
+            <span>♿ バリアフリー</span>
+        </div>
+        <a href="#about" class="btn">開催概要を見る</a>
+    </div>
+
+    <div class="hero-cast">
+        <figure class="j">
+            <span class="say">ようこそ、ニャ！</span>
+            <img src="assets/img/j-nyan.png" alt="案内役のマスコット、ジェイにゃん">
+            <figcaption>ジェイにゃん</figcaption>
+        </figure>
+        <figure class="t">
+            <span class="say">案内するニャ〜</span>
+            <img src="assets/img/teku-nyan.png" alt="案内役のマスコット、テクニャン">
+            <figcaption>テクニャン</figcaption>
+        </figure>
+    </div>
+
+    <p class="scroll">SCROLL</p>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2><span class="en">ABOUT</span>開催について</h2>
+        <p class="lead">1年に1度、工場の門をひらく感謝祭。今年は設立40周年の特別な回です。</p>
+
+        <div class="guide" style="--c:var(--orange)">
+            <img src="assets/img/j-nyan.png" alt="">
+            <p class="bubble">はじめまして、案内役の<strong>ジェイにゃん</strong>ニャ！<br>
+            このページで、当日の楽しみ方をぜんぶ紹介するニャ。</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-photo">
+                <img src="assets/img/about.jpg" alt="かみ合って回る大きな歯車" loading="lazy">
+            </div>
+            <div class="about-body">
+                <p class="number">40<small>周年</small></p>
+                <h3>ありがとうを、かたちに。</h3>
+                <p>株式会社JTEKTは設立40周年を迎えました。日ごろ支えてくださる地域のみなさまへの感謝を込めて、今年も田戸岬工場フェスティバルを開催します。</p>
+                <p>ステージも、屋台も、工場見学も。小さなお子さまからご年配の方まで、どなたでも一日ゆっくりお楽しみいただけます。</p>
+                <ul class="facts">
+                    <li><b>開催日</b><span>2026年11月15日（日）※小雨決行</span></li>
+                    <li><b>時間</b><span>10:00〜16:00（受付 9:30〜）</span></li>
+                    <li><b>会場</b><span>JTEKT 田戸岬工場（愛知県高浜市）</span></li>
+                    <li><b>入場</b><span>無料・申込不要・どなたでも</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="event">
+    <div class="container">
+        <h2><span class="en">EVENT</span>当日のもよおし</h2>
+        <p class="lead">見る・食べる・遊ぶ・学ぶ。会場のあちこちで一日中にぎやかです。</p>
+
+        <div class="cards">
+            <article class="card" style="--c:var(--orange)">
+                <div class="card-photo">
+                    <img src="assets/img/stage.jpg" alt="ステージに並べられた和太鼓" loading="lazy">
+                    <span class="card-tag">見る</span>
+                </div>
+                <div class="card-body">
+                    <h3>🎤 メインステージ</h3>
+                    <p>和太鼓の勇ましい響きで幕あけ。地域団体の演奏やダンス、キッズショーまで一日中もりだくさん。</p>
+                    <span class="when">10:00〜16:00</span>
+                </div>
+            </article>
+
+            <article class="card" style="--c:var(--yellow)">
+                <div class="card-photo">
+                    <img src="assets/img/lottery.jpg" alt="赤いリボンをかけたプレゼントの箱" loading="lazy">
+                    <span class="card-tag">当たる</span>
+                </div>
+                <div class="card-body">
+                    <h3>🎁 大抽選会</h3>
+                    <p>当日配布の抽選券で豪華賞品が当たるお楽しみ抽選会。ラストを飾る目玉企画です。</p>
+                    <span class="when">15:00〜</span>
+                </div>
+            </article>
+
+            <article class="card" style="--c:var(--teal)">
+                <div class="card-photo">
+                    <img src="assets/img/gourmet.jpg" alt="屋台の鉄板で焼かれる焼き鳥の串" loading="lazy">
+                    <span class="card-tag">食べる</span>
+                </div>
+                <div class="card-body">
+                    <h3>🍢 グルメ屋台</h3>
+                    <p>たこ焼き、焼きそば、地元の名物グルメが大集合。休憩スペースもご用意しています。</p>
+                    <span class="when">10:00〜16:00</span>
+                </div>
+            </article>
+
+            <article class="card" style="--c:var(--pink)">
+                <div class="card-photo">
+                    <img src="assets/img/kids.jpg" alt="青空に浮かぶカラフルな風船" loading="lazy">
+                    <span class="card-tag">遊ぶ</span>
+                </div>
+                <div class="card-body">
+                    <h3>🎈 キッズひろば</h3>
+                    <p>ふわふわ遊具やワークショップ、風船プレゼント。小さなお子さまも安心して遊べます。</p>
+                    <span class="when">10:00〜16:00</span>
+                </div>
+            </article>
+
+            <article class="card" style="--c:var(--grape)">
+                <div class="card-photo">
+                    <img src="assets/img/factory.jpg" alt="工場の製造機械" loading="lazy">
+                    <span class="card-tag">学ぶ</span>
+                </div>
+                <div class="card-body">
+                    <h3>🏭 工場見学ツアー</h3>
+                    <p>普段は見られない製造ラインを特別公開。ものづくりの現場を間近でご覧いただけます。</p>
+                    <span class="when">各回入替制・整理券</span>
+                </div>
+            </article>
+
+            <article class="card" style="--c:var(--blue)">
+                <div class="card-photo">
+                    <img src="assets/img/kitchencar.jpg" alt="ずらりと並んだキッチンカー" loading="lazy">
+                    <span class="card-tag">集まる</span>
+                </div>
+                <div class="card-body">
+                    <h3>🚚 キッチンカー広場</h3>
+                    <p>人気のキッチンカーが勢ぞろい。スイーツからガッツリ系まで、目移りしてしまう品ぞろえです。</p>
+                    <span class="when">10:00〜16:00</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="container">
+        <h2><span class="en">PHOTO</span>当日はこんな雰囲気</h2>
+        <p class="lead">見て、食べて、笑って。会場を彩るお祭りのひとコマ。</p>
+
+        <div class="gallery">
+            <figure><img src="assets/img/g-candy.jpg" alt="青空にならぶカラフルなわたあめ" loading="lazy"><figcaption>わたあめ</figcaption></figure>
+            <figure><img src="assets/img/g-takoyaki.jpg" alt="かつお節をのせた出来たてのたこ焼き" loading="lazy"><figcaption>たこ焼き</figcaption></figure>
+            <figure><img src="assets/img/g-yakisoba.jpg" alt="お皿に盛られた焼きそば" loading="lazy"><figcaption>焼きそば</figcaption></figure>
+            <figure><img src="assets/img/g-popcorn.jpg" alt="できたてのポップコーン" loading="lazy"><figcaption>ポップコーン</figcaption></figure>
+            <figure><img src="assets/img/g-furin.jpg" alt="金魚の絵が描かれた風鈴" loading="lazy"><figcaption>縁日の景品</figcaption></figure>
+            <figure><img src="assets/img/g-lantern.jpg" alt="ずらりと吊るされた提灯" loading="lazy"><figcaption>提灯かざり</figcaption></figure>
+        </div>
+        <p class="gallery-note">※ 写真はイメージです。当日の出店内容は変更になる場合があります。</p>
+    </div>
+</section>
+
+<section id="countdown">
+    <div class="container">
+        <h2><span class="en">COUNTDOWN</span>開催まであと</h2>
+        <div class="count-wrap">
+            <img src="assets/img/teku-nyan.png" alt="待ちきれない様子のテクニャン">
+            <div id="timer" role="timer" aria-live="off">読み込み中…</div>
+        </div>
+    </div>
+</section>
+
+<section id="venue">
+    <div class="container">
+        <h2><span class="en">VENUE MAP</span>会場マップ</h2>
+        <p class="lead">当日の会場レイアウトのイメージです。</p>
+        <p class="map-hint">🔎 ピンをタップすると、そのエリアの内容が表示されます。</p>
+
+        <div class="map" id="venueMap">
+            <div class="mz mz-path" aria-hidden="true"></div>
+            <div class="mz mz-bldg" aria-hidden="true">工場棟</div>
+            <div class="mz mz-park" aria-hidden="true">🅿️ 駐車場</div>
+            <div class="mz mz-gate" aria-hidden="true">正門</div>
+            <div class="mtree" style="--x:8%;--y:11%;--s:24px" aria-hidden="true"></div>
+            <div class="mtree" style="--x:31%;--y:8%;--s:15px" aria-hidden="true"></div>
+            <div class="mtree" style="--x:40%;--y:35%;--s:19px" aria-hidden="true"></div>
+            <div class="mtree" style="--x:70%;--y:8%;--s:21px" aria-hidden="true"></div>
+            <div class="mtree" style="--x:93%;--y:40%;--s:22px" aria-hidden="true"></div>
+            <div class="mtree" style="--x:36%;--y:89%;--s:18px" aria-hidden="true"></div>
+            <div class="mtree" style="--x:76%;--y:91%;--s:20px" aria-hidden="true"></div>
+
+            <div class="map-detail" id="mapDetail" role="status" aria-live="polite">
+                <button class="detail-close" id="detailClose" aria-label="閉じる">×</button>
+                <div class="detail-emoji"></div>
+                <div>
+                    <span class="detail-time"></span>
+                    <h4 class="detail-title"></h4>
+                    <p class="detail-desc"></p>
+                </div>
+            </div>
+        </div>
+        <p class="map-caption">※ エリア配置はイメージです。正式なレイアウトは当日配布のパンフレットをご確認ください。</p>
+
+        <div class="guide right" style="--c:var(--grape); margin-top:44px;">
+            <img src="assets/img/teku-nyan.png" alt="">
+            <p class="bubble">工場見学は<strong>整理券制</strong>だから、着いたらまず受付に行くニャ。<br>
+            人気だから早めがおすすめだニャ〜。</p>
+        </div>
+    </div>
+</section>
+
+<section id="access">
+    <div class="container">
+        <h2><span class="en">ACCESS</span>会場へのアクセス</h2>
+        <p class="lead">衣浦港に面した、JTEKT田戸岬工場が会場です。</p>
+
+        <div class="access-grid">
+            <div class="aerial">
+                <img src="assets/img/map-aerial.jpg" alt="JTEKT田戸岬工場周辺の航空写真。衣浦港に面して工場が広がる。" loading="lazy">
+                <div class="site-pin">
+                    <span class="chip">JTEKT 田戸岬工場</span>
+                    <span class="stem"></span>
+                    <span class="ring"></span>
+                </div>
+                <span class="src">出典：国土地理院ウェブサイト（全国最新写真・シームレス）</span>
+            </div>
+
+            <div class="info-card">
+                <h3>会場のご案内</h3>
+                <ul class="info-list">
+                    <li><b>会場</b><span>株式会社JTEKT 田戸岬工場</span></li>
+                    <li><b>住所</b><span>〒444-1323<br>愛知県高浜市田戸町1丁目5番地3</span></li>
+                    <li><b>電話</b><span><a href="tel:0566533611">0566-53-3611</a></span></li>
+                    <li><b>FAX</b><span>0566-53-4330</span></li>
+                    <li><b>お車</b><span>国道247号沿い。当日は場内に無料駐車場をご用意します。</span></li>
+                    <li><b>電車</b><span>名鉄三河線の最寄駅から送迎バスを運行予定です。</span></li>
+                </ul>
+                <div class="map-links">
+                    <a href="https://www.google.com/maps/search/?api=1&query=%E6%84%9B%E7%9F%A5%E7%9C%8C%E9%AB%98%E6%B5%9C%E5%B8%82%E7%94%B0%E6%88%B8%E7%94%BA1%E4%B8%81%E7%9B%AE5%E7%95%AA%E5%9C%B03" target="_blank" rel="noopener">📍 Googleマップで開く</a>
+                    <a href="https://maps.gsi.go.jp/#17/34.908599/136.979320/" target="_blank" rel="noopener">🗺 地理院地図で見る</a>
+                </div>
+                <p class="access-note">※ 当日は周辺道路の混雑が予想されます。お時間に余裕をもってお越しください。近隣のお店や住宅への駐車はご遠慮ください。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq">
+    <div class="container">
+        <h2><span class="en">FAQ</span>よくあるご質問</h2>
+        <p class="lead">気になることは、ここでチェック。</p>
+
+        <div class="guide" style="--c:var(--teal)">
+            <img src="assets/img/teku-nyan.png" alt="">
+            <p class="bubble">わからないことがあったら、遠慮なく聞いてほしいニャ。<br>
+            ここに載ってないことは、お電話でもどうぞ！</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>入場は無料ですか？<span class="mark">＋</span></button>
+                <div class="answer">はい、入場無料です。お申し込みも必要ありません。どなたでもお気軽にお越しください。</div>
+            </div>
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>雨天の場合はどうなりますか？<span class="mark">＋</span></button>
+                <div class="answer">小雨の場合は決行します。荒天が予想される場合は、開催可否を前日夕方までにこのページでお知らせします。</div>
+            </div>
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>駐車場はありますか？<span class="mark">＋</span></button>
+                <div class="answer">場内に無料駐車場をご用意しています。台数に限りがあるため、乗り合わせや公共交通機関のご利用にもご協力ください。</div>
+            </div>
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>ベビーカーや車いすでも大丈夫ですか？<span class="mark">＋</span></button>
+                <div class="answer">会場は平坦で、通路も広くとっています。多目的トイレ、授乳・おむつ替えスペースもご利用いただけます。</div>
+            </div>
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>工場見学には申し込みが必要ですか？<span class="mark">＋</span></button>
+                <div class="answer">事前申し込みは不要ですが、各回入替制の整理券が必要です。当日、総合インフォメーションで先着順にお配りします。</div>
+            </div>
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>支払いは現金だけですか？<span class="mark">＋</span></button>
+                <div class="answer">屋台・キッチンカーによって異なります。キャッシュレス対応の店舗もありますが、現金もお持ちいただくと安心です。</div>
+            </div>
+            <div class="faq-item">
+                <button type="button" aria-expanded="false"><span class="q">Q</span>ペットを連れて行けますか？<span class="mark">＋</span></button>
+                <div class="answer">安全および衛生上の理由から、ペットの同伴はご遠慮いただいております。補助犬はこの限りではありません。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <span class="foot-logo"><img src="assets/img/jtekt-logo.svg" alt="株式会社JTEKT" width="117" height="33"></span>
+
+    <div class="foot-cast">
+        <img src="assets/img/j-nyan.png" alt="">
+        <img src="assets/img/teku-nyan.png" alt="">
+    </div>
+
+    <h4>第38回 田戸岬工場フェスティバル</h4>
+    <p>2026年11月15日（日）10:00〜16:00／入場無料<br>
+    お問い合わせ：<a href="tel:0566533611" style="color:#ffd48a;">0566-53-3611</a></p>
+
+    <details class="credits">
+        <summary>このページで使用している写真・地図の出典</summary>
+        <ul>
+            <li>地図・航空写真：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">国土地理院タイル（全国最新写真・シームレス）</a></li>
+            <li>歯車（開催について）：“Gears gears cogs bits n pieces” by <a href="https://www.flickr.com/photos/24736216@N07" target="_blank" rel="noopener">Elsie esq.</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>和太鼓：“Taiko drumming!” by <a href="https://www.flickr.com/photos/50352333@N00" target="_blank" rel="noopener">vicki moore</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>プレゼント：“Gift Box” by <a href="https://www.flickr.com/photos/61423903@N06" target="_blank" rel="noopener">FutUndBeidl</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>焼き鳥（グルメ屋台）：“Yakitori grill” by <a href="https://www.flickr.com/photos/20260568@N07" target="_blank" rel="noopener">JobyOne</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>たこ焼き：“Takoyaki by yomi955” by <a href="https://www.flickr.com/photos/yomi955" target="_blank" rel="noopener">heiwa4126</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>風船：“Balloon Colorful” by spemone / <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a></li>
+            <li>工場機械：“old felt hat factory machine” by <a href="https://www.flickr.com/photos/97302573@N06" target="_blank" rel="noopener">Jeanne Menjoulet</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>キッチンカー：“Food Trucks at the Haiti Benefit” by <a href="https://www.flickr.com/photos/48889110454@N01" target="_blank" rel="noopener">ricardodiaz11</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>わたあめ：“cotton candy” by <a href="https://www.flickr.com/photos/34094515@N00" target="_blank" rel="noopener">SheilaTostes</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>焼きそば：“Yakisoba 焼きそば” by <a href="https://www.flickr.com/photos/11154211@N04" target="_blank" rel="noopener">Ari Helminen</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>ポップコーン：“popcorn snack” / <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a></li>
+            <li>風鈴：“IMG_2660” by <a href="https://www.flickr.com/photos/33562486@N00" target="_blank" rel="noopener">beggs</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>提灯：“Chochin Lantern - Nishiki Market” by <a href="https://www.flickr.com/photos/93248181@N02" target="_blank" rel="noopener">ajay_suresh</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+            <li>ジェイにゃん・テクニャン、JTEKTロゴ：株式会社JTEKT</li>
+        </ul>
+    </details>
+
+    <p class="copyright">©2026 JTEKT Corporation</p>
+</footer>
+
+<script>
+"use strict";
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const COLORS = ["--orange","--teal","--yellow","--pink","--grape","--blue"];
+
+/* ===============================
+   バンティング（三角旗）
+=============================== */
+(function(){
+    const bunting = document.getElementById("bunting");
+    if(!bunting) return;
+    for(let i=0;i<18;i++){
+        const f = document.createElement("span");
+        f.className = "flag";
+        f.style.setProperty("--c", `var(${COLORS[i % COLORS.length]})`);
+        f.style.animationDelay = (i * 0.12) + "s";
+        bunting.appendChild(f);
+    }
+})();
+
+/* ===============================
+   雲と紙吹雪
+=============================== */
+(function(){
+    const hero = document.querySelector(".hero");
+    const confetti = document.getElementById("confetti");
+    if(!hero || reduced) return;
+
+    for(let i=0;i<5;i++){
+        const c = document.createElement("div");
+        c.className = "cloud";
+        const w = 90 + Math.random()*130;
+        c.style.width = w + "px";
+        c.style.height = (w*0.3) + "px";
+        c.style.top = (8 + Math.random()*32) + "%";
+        c.style.animationDuration = (34 + Math.random()*30) + "s";
+        c.style.animationDelay = (-Math.random()*50) + "s";
+        hero.appendChild(c);
+    }
+
+    if(!confetti) return;
+    for(let i=0;i<26;i++){
+        const p = document.createElement("i");
+        p.style.setProperty("--c", `var(${COLORS[i % COLORS.length]})`);
+        p.style.left = Math.random()*100 + "%";
+        p.style.animationDuration = (7 + Math.random()*7) + "s";
+        p.style.animationDelay = (-Math.random()*14) + "s";
+        p.style.transform = `scale(${0.6 + Math.random()*0.7})`;
+        confetti.appendChild(p);
+    }
+})();
+
+/* ===============================
+   カウントダウン
+=============================== */
+(function(){
+    const timer = document.getElementById("timer");
+    if(!timer) return;
+    const target = new Date("2026-11-15T10:00:00");
+
+    function unit(value, cap){
+        return `<span class="unit"><span class="num">${value}</span><span class="cap">${cap}</span></span>`;
+    }
+    function update(){
+        const diff = target - new Date();
+        if(diff <= 0){
+            timer.innerHTML = `<span class="unit"><span class="num" style="min-width:auto;padding:14px 28px;">🎉 本日開催！</span></span>`;
+            return true;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor(diff % 86400000 / 3600000);
+        const m = Math.floor(diff % 3600000 / 60000);
+        const s = Math.floor(diff % 60000 / 1000);
+        timer.innerHTML = unit(d,"日") + unit(String(h).padStart(2,"0"),"時間")
+                        + unit(String(m).padStart(2,"0"),"分") + unit(String(s).padStart(2,"0"),"秒");
+        return false;
+    }
+    if(!update()){
+        const id = setInterval(()=>{ if(update()) clearInterval(id); }, 1000);
+    }
+})();
+
+/* ===============================
+   会場マップ（ピンをタップで詳細）
+=============================== */
+(function(){
+    const map = document.getElementById("venueMap");
+    const detail = document.getElementById("mapDetail");
+    if(!map || !detail) return;
+
+    const spots = [
+        {emoji:"🎤", label:"ステージ", title:"メインステージ", time:"10:00〜", color:"--orange",
+         desc:"オープニングから地域団体の演奏やダンス、キッズショーまで一日中にぎやか。", x:20, y:26},
+        {emoji:"🍢", label:"グルメ", title:"グルメ屋台エリア", time:"10:00〜16:00", color:"--teal",
+         desc:"キッチンカーと地元の名物グルメが大集合。休憩スペースも近くにあります。", x:52, y:18},
+        {emoji:"🎁", label:"抽選会", title:"大抽選会ブース", time:"15:00〜", color:"--yellow",
+         desc:"当日配布の抽選券で豪華賞品が当たる、お楽しみ抽選会。", x:82, y:26},
+        {emoji:"🎈", label:"キッズ", title:"キッズひろば", time:"10:00〜16:00", color:"--pink",
+         desc:"ふわふわ遊具やワークショップ。小さなお子さまも安心して遊べます。", x:26, y:74},
+        {emoji:"🏭", label:"工場見学", title:"工場見学ツアー", time:"各回入替制", color:"--grape",
+         desc:"普段は見られない製造ラインを公開。受付で整理券をお受け取りください。", x:56, y:78},
+        {emoji:"ℹ️", label:"受付", title:"総合インフォメーション", time:"9:30〜", color:"--blue",
+         desc:"受付・落とし物・救護はこちら。困ったときはお気軽にどうぞ。", x:84, y:72}
+    ];
+
+    let activePin = null;
+
+    function closeDetail(){
+        detail.classList.remove("show");
+        if(activePin){
+            activePin.classList.remove("active");
+            activePin.setAttribute("aria-pressed","false");
+            activePin = null;
+        }
+    }
+    function openDetail(spot, pin){
+        if(activePin === pin){ closeDetail(); return; }
+        if(activePin){
+            activePin.classList.remove("active");
+            activePin.setAttribute("aria-pressed","false");
+        }
+        pin.classList.add("active");
+        pin.setAttribute("aria-pressed","true");
+        activePin = pin;
+
+        detail.style.setProperty("--c", `var(${spot.color})`);
+        detail.querySelector(".detail-emoji").textContent = spot.emoji;
+        detail.querySelector(".detail-time").textContent = spot.time;
+        detail.querySelector(".detail-title").textContent = spot.title;
+        detail.querySelector(".detail-desc").textContent = spot.desc;
+        detail.classList.add("show");
+    }
+
+    spots.forEach(spot=>{
+        const pin = document.createElement("button");
+        pin.type = "button";
+        pin.className = "pin";
+        pin.style.left = spot.x + "%";
+        pin.style.top = spot.y + "%";
+        pin.style.setProperty("--c", `var(${spot.color})`);
+        pin.setAttribute("aria-label", spot.title + "の詳細を見る");
+        pin.setAttribute("aria-pressed","false");
+        pin.innerHTML = `<span class="dot" aria-hidden="true">${spot.emoji}</span><span class="plabel">${spot.label}</span>`;
+        pin.addEventListener("click", ()=> openDetail(spot, pin));
+        map.appendChild(pin);
+    });
+
+    document.getElementById("detailClose").addEventListener("click", closeDetail);
+    map.addEventListener("click", e=>{ if(e.target === map) closeDetail(); });
+    document.addEventListener("keydown", e=>{ if(e.key === "Escape") closeDetail(); });
+})();
+
+/* ===============================
+   FAQ アコーディオン
+=============================== */
+document.querySelectorAll(".faq-item button").forEach(button=>{
+    button.addEventListener("click", ()=>{
+        const answer = button.nextElementSibling;
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        document.querySelectorAll(".faq-item button").forEach(b=>{
+            b.setAttribute("aria-expanded","false");
+            b.nextElementSibling.classList.remove("open");
+        });
+        if(!isOpen){
+            button.setAttribute("aria-expanded","true");
+            answer.classList.add("open");
+        }
+    });
+});
+
+/* ===============================
+   スクロールフェード
+=============================== */
+(function(){
+    const targets = document.querySelectorAll("section:not(.hero)");
+    if(reduced || !("IntersectionObserver" in window)){
+        targets.forEach(s=> s.classList.add("show"));
+        return;
+    }
+    const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    },{ threshold:.12 });
+    targets.forEach(section=>{
+        section.classList.add("fade");
+        observer.observe(section);
+    });
+})();
+
+/* ===============================
+   ヘッダー背景
+=============================== */
+(function(){
+    const header = document.querySelector("header");
+    if(!header) return;
+    const onScroll = ()=>{
+        if(window.scrollY > 40){
+            header.style.background = "rgba(255,255,255,.94)";
+            header.style.boxShadow = "0 8px 24px rgba(31,45,58,.10)";
+        } else {
+            header.style.background = "rgba(255,255,255,.62)";
+            header.style.boxShadow = "none";
+        }
+    };
+    window.addEventListener("scroll", onScroll, { passive:true });
+    onScroll();
+})();
+</script>
+
+</body>
+</html>
